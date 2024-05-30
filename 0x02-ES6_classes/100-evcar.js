@@ -14,8 +14,8 @@ export default class EVCar extends Car {
     this._range = value;
   }
 
+  // eslint-disable-next-line class-methods-use-this
   cloneCar() {
-    const Species = super.constructor[Symbol.species];
-    return new Species();
+    return new Car();
   }
 }
