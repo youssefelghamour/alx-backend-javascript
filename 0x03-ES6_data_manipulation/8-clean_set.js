@@ -3,14 +3,14 @@ export default function cleanSet(set, startString) {
     return '';
   }
 
-  let str = '';
+  const result = [];
 
   for (const element of set) {
     if (startString && element.startsWith(startString)) {
       const newStr = element.slice(startString.length);
-      str = `${str}-${newStr}`;
+      result.push(newStr);
     }
   }
 
-  return str.slice(1);
+  return result.join('-');
 }
