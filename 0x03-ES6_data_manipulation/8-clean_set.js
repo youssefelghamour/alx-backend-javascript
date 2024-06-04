@@ -1,4 +1,8 @@
 export default function cleanSet(set, startString) {
+  if (!startString || typeof startString !== 'string') {
+    return '';
+  }
+
   let str = '';
 
   for (const element of set) {
@@ -8,5 +12,5 @@ export default function cleanSet(set, startString) {
     }
   }
 
-  return str.slice(1) || '';
+  return str.slice(1);
 }
