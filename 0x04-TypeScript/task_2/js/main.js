@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.createEmployee = exports.Teacher = exports.Director = void 0;
+exports.executeWork = exports.isDirector = exports.createEmployee = exports.Teacher = exports.Director = void 0;
 var Director = /** @class */ (function () {
     function Director() {
     }
@@ -38,6 +38,22 @@ function createEmployee(salary) {
     return new Director();
 }
 exports.createEmployee = createEmployee;
+function isDirector(employee) {
+    if (employee instanceof Director) {
+        return true;
+    }
+    return false;
+}
+exports.isDirector = isDirector;
+function executeWork(employee) {
+    if (isDirector(employee)) {
+        return employee.workDirectorTasks();
+    }
+    return employee.workTeacherTasks();
+}
+exports.executeWork = executeWork;
 console.log(createEmployee(200));
 console.log(createEmployee(1000));
 console.log(createEmployee('$500'));
+console.log(executeWork(createEmployee(200)));
+console.log(executeWork(createEmployee(1000)));
