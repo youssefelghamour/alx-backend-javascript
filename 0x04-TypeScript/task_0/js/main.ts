@@ -5,23 +5,23 @@ interface Student {
     location: string;
   }
   
-  const student1 : Student = {
+const student1 : Student = {
     firstName: 'firstname1',
     lastName: 'lastname2',
     age: 21,
     location: 'place1',
-  };
+};
   
-  const student2 : Student = {
+const student2 : Student = {
     firstName: 'firstname2',
     lastName: 'lastname2',
     age: 22,
     location: 'place2',
-  };
+};
   
-  const studentsList: Student[] = [student1, student2];
+const studentsList: Student[] = [student1, student2];
   
-  function renderTable(students: Student[]): void {
+function renderTable(students: Student[]): void {
     const table = document.createElement('table');
   
     students.forEach((student) => {
@@ -34,6 +34,6 @@ interface Student {
     });
   
     document.body.appendChild(table);
-  }
+}
   
-  renderTable(studentsList);  
+renderTable(studentsList);  
