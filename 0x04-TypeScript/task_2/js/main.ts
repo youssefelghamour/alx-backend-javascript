@@ -59,7 +59,7 @@ export function executeWork(employee: (Teacher | Director)) {
     return (employee as Teacher).workTeacherTasks();
 }
 
-type Subjects = 'Math' | 'History';
+export type Subjects = 'Math' | 'History';
 
 export function teachClass(todayClass: Subjects): string {
     if (todayClass === 'Math') {
