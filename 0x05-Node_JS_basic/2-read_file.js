@@ -1,6 +1,5 @@
 const fs = require('fs');
 
-
 const countStudents = (path) => {
   if (!fs.existsSync(path)) {
     throw new Error('Cannot load the database');
@@ -28,16 +27,19 @@ const countStudents = (path) => {
     }
     fields[field].push(firstname); // Add the firstname to the respective field
   });
-  
+
   // fields = {
   //   CS: [ 'Johann', 'Arielle', 'Jonathan', 'Emmanuel', 'Guillaume', 'Katie' ],
   //   SWE: [ 'Guillaume', 'Joseph', 'Paul', 'Tommy' ]
   // }
 
   for (const field in fields) {
-    const count = fields[field].length;
-    const names = fields[field].join(', ');
-    console.log(`Number of students in ${field}: ${count}. List: ${names}`);
+    // Make sure the 'fields' object has a property with the name of 'field'
+    if (Object.prototype.hasOwnProperty.call(fields, field)) {
+      const count = fields[field].length;
+      const names = fields[field].join(', ');
+      console.log(`Number of students in ${field}: ${count}. List: ${names}`);
+    }
   }
 };
 
