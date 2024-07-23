@@ -12,7 +12,7 @@ const countStudents = (path) => new Promise((resolve, reject) => {
       return;
     }
     const lines = data.trim().split('\n');
-    const students = lines.slice(1).filter(line => line); // Remove the header line and filter empty lines
+    const students = lines.slice(1).filter((line) => line);
     const totalStudents = students.length;
     const fields = {};
     students.forEach((line) => {
